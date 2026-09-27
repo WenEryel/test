@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terra Coffee Co. — Small-Batch Roastery</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Karla:wght@400;500;700&display=swap');
+
+    :root {
+      --cream: #EFE6D8;
+      --espresso: #3B2A20;
+      --rust: #A2543D;
+      --sage: #7C8471;
+      --cloud: #FAF7F2;
+      --ink: #2A211B;
+    }
+
+    body {
+      font-family: 'Karla', Arial, sans-serif;
+      color: var(--ink);
+      background-color: var(--cream);
+    }
+
+    h1, h2, h3, .roastery-brand {
+      font-family: 'Fraunces', Georgia, serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navbar */
+    .navbar-roastery {
+      background-color: var(--espresso);
+      padding: 18px 0;
+    }
+
+    .navbar-roastery .navbar-brand {
+      color: var(--cream);
+      font-weight: 600;
+      font-size: 1.3rem;
+      letter-spacing: 0.3px;
+    }
+
+    .navbar-roastery .nav-link {
+      color: #E4D9C8;
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar-roastery .nav-link:hover {
+      color: var(--cream);
+    }
+
+    .btn-roast {
+      background-color: var(--rust);
+      color: var(--cloud);
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 4px;
+      border: none;
+    }
+
+    .btn-roast:hover {
+      background-color: #8A4531;
+      color: var(--cloud);
+    }
+
+    .btn-visit {
+      border: 1.5px solid var(--espresso);
+      color: var(--espresso);
+      font-weight: 700;
+      padding: 8px 20px;
+      border-radius: 4px;
+    }
+
+    .btn-visit:hover {
+      background-color: var(--espresso);
+      color: var(--cream);
+    }
+
+    /* Hero */
+    .roast-hero {
+      padding: 90px 0;
+    }
+
+    .roast-hero h1 {
+      font-size: 3rem;
+      font-weight: 600;
+      line-height: 1.2;
+      max-width: 560px;
+    }
+
+    .roast-hero p.lead {
+      color: #6B5D4F;
+      max-width: 460px;
+      font-size: 1.1rem;
+    }
+
+    .hero-photo {
+      width: 100%;
+      height: 380px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Blend lineup section */
+    .lineup-section {
+      background-color: var(--cloud);
+      padding: 80px 0;
+    }
+
+    .section-label {
+      color: var(--rust);
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+    }
+
+    .blend-card {
+      background-color: var(--cream);
+      border-radius: 6px;
+      padding: 28px;
+      height: 100%;
+    }
+
+    .blend-photo {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 4px;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .blend-card h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .blend-card p {
+      color: #6B5D4F;
+      font-size: 0.95rem;
+      margin-bottom: 0;
+    }
+
+    /* Origin story section */
+    .origin-section {
+      background-color: var(--sage);
+      color: var(--cloud);
+      padding: 80px 0;
+    }
+
+    .origin-photo {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    .origin-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .origin-section p {
+      line-height: 1.7;
+      max-width: 480px;
+    }
+
+    /* Shop / visit section */
+    .shop-section {
+      background-color: var(--espresso);
+      color: var(--cream);
+      padding: 70px 0;
+    }
+
+    .shop-section h2 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+
+    .shop-details dt {
+      color: #E4D9C8;
+      font-weight: 700;
+      margin-top: 14px;
+    }
+
+    .shop-details dd {
+      color: #C9BBA6;
+      margin-bottom: 0;
+    }
+
+    .shop-map-photo {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 6px;
+      display: block;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2A1D14;
+      color: #C9BBA6;
+      padding: 50px 0 30px;
+    }
+
+    footer h3 {
+      color: var(--cream);
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    footer input[type="email"] {
+      padding: 11px 14px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 280px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    footer .footer-links a {
+      color: #C9BBA6;
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    footer .footer-links a:hover {
+      color: var(--cream);
+    }
+
+    footer .copyright {
+      border-top: 1px solid #4A3B2C;
+      margin-top: 30px;
+      padding-top: 20px;
+      font-size: 0.85rem;
+      color: #8A7A68;
+    }
+
+    @media (max-width: 767px) {
+      .roast-hero h1 {
+        font-size: 2.2rem;
+      }
+      .roast-hero {
+        padding: 60px 0;
+        text-align: center;
+      }
+      .roast-hero p.lead {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-photo {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-md navbar-roastery" aria-label="Main navigation">
+    <div class="container">
+      <a class="navbar-brand" href="#top">Terra Coffee Co.</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="mainNav">
+        <ul class="navbar-nav align-items-md-center gap-md-2">
+          <li class="nav-item"><a class="nav-link" href="#roasts">Roasts</a></li>
+          <li class="nav-item"><a class="nav-link" href="#story">Our Story</a></li>
+          <li class="nav-item"><a class="nav-link" href="#visit">Visit</a></li>
+          <li class="nav-item mt-2 mt-md-0">
+            <a class="btn-roast d-inline-block" href="login.html">Order Online</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="roast-hero" id="top">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <h1>Roasted in small batches, brewed for slow mornings.</h1>
+          <p class="lead">Terra Coffee Co. sources single-origin beans directly from farmers and roasts them weekly in our neighborhood shop. Taste the difference freshness makes.</p>
+          <div class="d-flex gap-3 flex-wrap justify-content-md-start justify-content-center mt-4">
+            <a href="login.html" class="btn-roast">Order Online</a>
+            <a href="#visit" class="btn-visit">Find Our Shop</a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img class="hero-photo" src="images/coffee pouring.jpg" alt="Hands pouring freshly brewed coffee into a paper cup">
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Roasts -->
+  <section class="lineup-section" id="roasts">
+    <div class="container">
+      <p class="section-label">This week's lineup</p>
+      <h2 class="mb-5">Three roasts, one shared obsession with flavor.</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="blend-card">
+            <img class="blend-photo" src="images/sunrise light.jpg" alt="Sunrise Light Roast coffee beans">
+            <h3>Sunrise Light Roast</h3>
+            <p>Bright and floral, with notes of stone fruit and honey. Best brewed as a pour-over.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blend-card">
+            <img class="blend-photo" src="images/highland medium.jpg" alt="Highland Medium Roast coffee beans">
+            <h3>Highland Medium Roast</h3>
+            <p>Balanced and nutty, with a soft caramel finish. Our most popular everyday blend.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="blend-card">
+            <img class="blend-photo" src="images/midnight dark.jpg" alt="Midnight Dark Roast coffee beans">
+            <h3>Midnight Dark Roast</h3>
+            <p>Bold and smoky, with a rich chocolate depth. Holds up well to milk.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Story -->
+  <section class="origin-section" id="story">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-md-6">
+          <img class="origin-photo" src="images/terra cafe interior.jpg" alt="Interior of the Terra Coffee Co. roastery">
+        </div>
+        <div class="col-md-6">
+          <h2>We started with one roaster and a lot of stubbornness.</h2>
+          <p>Terra Coffee Co. opened in 2019 with a single drum roaster and a belief that coffee tastes better when you know exactly where it came from. Today we work with six farming cooperatives across three countries, and we still roast everything ourselves, in small batches, every week.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Visit -->
+  <section class="shop-section" id="visit">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-md-6">
+          <h2>Come say hi.</h2>
+          <dl class="shop-details">
+            <dt>Address</dt>
+            <dd>142 Molave Street, Bacoor, Cavite</dd>
+            <dt>Hours</dt>
+            <dd>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat–Sun: 8:00 AM – 5:00 PM</dd>
+            <dt>Phone</dt>
+            <dd>(046) 555-0132</dd>
+          </dl>
+        </div>
+        <div class="col-md-6">
+          <img class="shop-map-photo" src="images/terra cafe exterior.jpg" alt="exterior of Terra Coffee">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-5">
+          <h3>Terra Coffee Co.</h3>
+          <p>Small-batch roastery, based in Bacoor.</p>
+          <form action="#" class="d-flex flex-wrap mt-3" aria-label="Newsletter signup">
+            <label for="newsletter-email" class="visually-hidden">Email address</label>
+            <input type="email" id="newsletter-email" name="newsletter-email" placeholder="Your email address" required>
+            <button type="submit" class="btn-roast">Subscribe</button>
+          </form>
+        </div>
+        <div class="col-md-3 offset-md-1">
+          <h3 class="fs-6">Explore</h3>
+          <div class="footer-links">
+            <a href="#roasts">Roasts</a>
+            <a href="#story">Our Story</a>
+            <a href="#visit">Visit</a>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <h3 class="fs-6">Account</h3>
+          <div class="footer-links">
+            <a href="login.html">Log In</a>
+            <a href="register.html">Create Account</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2026 Terra Coffee Co. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
